@@ -20,7 +20,7 @@ function getRandomPlayer(e) {
 }
 
 function openPage() {
-  window.open("./pages/results.html");
+  window.open("../client/results.html");
   getRandomPlayer();
 }
 
