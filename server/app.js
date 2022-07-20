@@ -5,13 +5,18 @@ let data = require("./data");
 
 app.use(cors());
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Welcome to the Google API!'));
 
 app.get("/search", (req, res) => {
     res.send(data);
   })
 
-  app.get('/search/:id', (req, res) => {
+app.get("/search/random", (req, res) => {
+    let random = data[Math.floor(Math.random() * data.length)]
+    res.send(random);
+})
+
+app.get('/search/:id', (req, res) => {
 
     const id = req.params.id;
   
@@ -23,9 +28,9 @@ app.get("/search", (req, res) => {
         })
     } else {
         res.status(404).json({
-            error: "No such player"
+            error: "No such player exists"
         })
     }
-  });
+});
 
-  module.exports = app;
+module.exports = app;
