@@ -22,8 +22,6 @@ function getRandomPlayer() {
     .then((data) => (text.innerText = JSON.stringify(data)));
 }
 
-function displayRandomPlayer(e) {
-  text.innerText = getRandomPlayer();
-}
+function displayRandomPlayer(e) {}
 
-window.addEventListener("load", displayRandomPlayer);
+window.addEventListener("load", getRandomPlayer);
