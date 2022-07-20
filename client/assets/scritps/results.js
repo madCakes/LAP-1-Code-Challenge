@@ -1,5 +1,6 @@
 const text = document.querySelector("#result");
 
+// this works
 async function getRandomPlayer2() {
   try {
     const res = await fetch("http://localhost:3000/search/random");
@@ -8,10 +9,11 @@ async function getRandomPlayer2() {
   } catch (error) {
     console.log(error);
   }
+  return data;
 }
 
 function displayRandomPlayer(e) {
-  e.target.value = document.querySelector("#text").innerHTML = getRandomPlayer2;
+  text.innerHTML = getRandomPlayer2;
 }
 
 window.addEventListener("load", displayRandomPlayer);
