@@ -1,5 +1,6 @@
 let randomButton = document.querySelector("#random");
 let searchButton = document.querySelector("#search");
+
 function getRandomPlayer(e) {
   e.preventDefault();
   fetch("http://localhost:3000/search/random")
@@ -17,11 +18,14 @@ function getRandomPlayer(e) {
       console.log(err);
     });
 }
+
 function openPage() {
   window.open("./pages/results.html");
   getRandomPlayer();
 }
+
 randomButton.addEventListener("click", openPage);
+
 function getPlayers(e) {
   e.preventDefault();
   fetch("http://localhost:3000/search")
@@ -39,4 +43,5 @@ function getPlayers(e) {
       console.log(err);
     });
 }
+
 searchButton.addEventListener("click", getPlayers);
