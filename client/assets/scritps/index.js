@@ -1,5 +1,5 @@
-let randomButton = document.querySelector("#random");
-let searchButton = document.querySelector("#search");
+const randomButton = document.querySelector("#random");
+const searchButton = document.querySelector("#search");
 
 function getRandomPlayer(e) {
   e.preventDefault();
@@ -19,13 +19,6 @@ function getRandomPlayer(e) {
     });
 }
 
-function openPage() {
-  window.open("../client/results.html");
-  getRandomPlayer();
-}
-
-randomButton.addEventListener("click", openPage);
-
 function getPlayers(e) {
   e.preventDefault();
   fetch("http://localhost:3000/search")
@@ -44,4 +37,14 @@ function getPlayers(e) {
     });
 }
 
+function openPage() {
+  window.open("../client/results.html");
+  //   getRandomPlayer();
+}
+
+randomButton.addEventListener("click", openPage);
 searchButton.addEventListener("click", getPlayers);
+
+// testing
+
+// randomButton.addEventListener("click", getRandomPlayer2);
